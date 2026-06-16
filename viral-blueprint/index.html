@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Viral Blueprint — Your complete guide to starting a rap career, building an audience, and making real money in music. 7 chapters. Digital ebook.">
+<title>The Viral Blueprint — Your Complete Rap & Music Career Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0A0A0A;
+    --bg2:      #141414;
+    --bg3:      #1A1A1A;
+    --surface:  #222222;
+    --border:   #2A2A2A;
+    --text:     #EDF2F4;
+    --muted:    #8D99AE;
+    --red:      #EF233C;
+    --red-d:    #D90429;
+    --black:    #2B2D42;
+    --serif:    'Fraunces', 'EB Garamond', 'Iowan Old Style', Georgia, serif;
+    --mono:     'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .container--narrow {
+    max-width: 900px;
+  }
+  .container--sm {
+    max-width: 740px;
+  }
+  .container--xs {
+    max-width: 600px;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 42px; left: 0; right: 0; z-index: 100;
+    height: 68px;
+    background: linear-gradient(180deg, rgba(0,0,0,.9) 0%, transparent 100%);
+    transition: background .3s;
+  }
+  nav.scrolled { background: var(--bg); }
+  .nav-inner {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .nav-group {
+    display: flex;
+    align-items: center;
+  }
+  nav .logo {
+    font-size: 24px; font-weight: 900;
+    letter-spacing: -.02em; line-height: 1;
+  }
+  nav .logo span { color: var(--red); }
+  nav .nav-cta {
+    background: var(--red); color: #fff;
+    text-decoration: none; font-size: 13px; font-weight: 700;
+    padding: 10px 24px; border-radius: 3px;
+    transition: background .2s;
+  }
+  nav .nav-cta:hover { background: var(--red-d); }
+
+  /* ── OFFER BANNER ── */
+  .offer-banner {
+    position: sticky; top: 0; z-index: 101;
+    background: var(--red);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: .04em; color: #fff;
+    border-bottom: 2px solid var(--red-d);
+  }
+  .offer-banner span.hl { color: #ffdd77; margin: 0 4px; }
+  .offer-banner #banner-timer {
+    font-family: var(--mono);
+    font-size: 15px; font-weight: 900;
+    color: #ffdd77;
+    font-variant-numeric: tabular-nums;
+  }
+  .offer-banner .pulse {
+    display: inline-block;
+  }
+
+  /* ── CARD LETTER ── */
+  .card-letter {
+    font-size: 52px; font-weight: 900;
+    color: var(--red); opacity: .6;
+  }
+  .payment-methods {
+    margin-top: 16px; font-size: 12px;
+    color: var(--muted); font-weight: 600;
+  }
+
+  /* ── HERO BILLBOARD ── */
+  .billboard {
+    position: relative;
+    min-height: 100vh;
+    display: flex; align-items: flex-end;
+    padding: 0 48px 120px;
+    background: radial-gradient(ellipse 900px 500px at 30% 50%, rgba(239,35,60,.06), transparent),
+                radial-gradient(ellipse 600px 600px at 80% 80%, rgba(45,45,66,.08), transparent),
+                linear-gradient(180deg, #0A0A0A 0%, #0D0D0D 50%, #0A0A0A 100%);
+    overflow: hidden;
+  }
+  .billboard::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 600px 400px at 30% 60%, rgba(239,35,60,.08), transparent),
+      radial-gradient(ellipse 400px 400px at 70% 30%, rgba(45,45,66,.15), transparent);
+  }
+  .billboard::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 250px;
+    background: linear-gradient(transparent, var(--bg));
+  }
+  .billboard-content {
+    position: relative; z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .billboard-tag {
+    font-family: var(--mono);
+    font-size: 12px; font-weight: 700; letter-spacing: .12em;
+    color: var(--red); text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .billboard h1 {
+    font-family: var(--serif);
+    font-size: clamp(44px, 7vw, 96px);
+    font-weight: 900; line-height: .95;
+    margin-bottom: 8px;
+  }
+  .billboard h1 .outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--text);
+  }
+  .billboard .sub {
+    font-size: 16px; color: var(--muted);
+    max-width: 600px; margin: 24px auto 32px;
+    line-height: 1.7;
+  }
+  .billboard .btns {
+    display: flex; gap: 12px; flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-play {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: #fff; color: #000;
+    font-weight: 700; font-size: 18px;
+    padding: 12px 32px; text-decoration: none;
+    border-radius: 3px; transition: background .2s;
+  }
+  .btn-play:hover { background: #ddd; }
+  .btn-play .play-icon {
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 18px;
+    border-color: transparent transparent transparent #000;
+  }
+  .btn-info {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.12); color: #fff;
+    font-weight: 600; font-size: 16px;
+    padding: 12px 28px; text-decoration: none;
+    border-radius: 3px; transition: background .2s;
+  }
+  .btn-info:hover { background: rgba(255,255,255,.2); }
+
+  .billboard-meta {
+    display: flex; gap: 16px; align-items: center;
+    margin-top: 28px; font-family: var(--mono);
+    font-size: 13px; color: var(--muted);
+    flex-wrap: wrap; justify-content: center;
+  }
+  .billboard-meta .match {
+    color: #46d369; font-weight: 700;
+  }
+  .billboard-meta .badge {
+    border: 1px solid var(--muted); padding: 1px 8px;
+    font-size: 11px; border-radius: 2px;
+  }
+
+  /* ── ROWS ── */
+  .row-section {
+    padding: 40px 0 20px;
+    position: relative; z-index: 2;
+  }
+  .row-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 20px; justify-content: center;
+  }
+  .row-header h2 {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em;
+  }
+  .row-header .see-all {
+    font-size: 12px; color: var(--muted);
+    text-decoration: none; font-weight: 600;
+    transition: color .2s;
+  }
+  .row-header .see-all:hover { color: var(--text); }
+
+  .row-scroll {
+    display: flex; gap: 8px;
+    overflow-x: auto; padding: 8px 0 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start;
+  }
+  .row-scroll::-webkit-scrollbar { display: none; }
+
+  .card {
+    flex: 0 0 auto;
+    width: 260px;
+    background: var(--bg3);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform .3s;
+    position: relative;
+    cursor: pointer;
+  }
+  .card:hover { transform: scale(1.08); }
+  .card-img {
+    width: 100%; aspect-ratio: 16/9;
+    background: var(--surface);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img .num {
+    font-size: 72px; font-weight: 900;
+    color: rgba(255,255,255,.04);
+    line-height: 1;
+  }
+  .card-img .label {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--red); color: #fff;
+    font-size: 10px; font-weight: 700; letter-spacing: .08em;
+    padding: 3px 10px; border-radius: 2px;
+  }
+  .card-body {
+    padding: 16px;
+  }
+  .card-body h3 {
+    font-family: var(--serif);
+    font-size: 14px; font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .card-body p {
+    font-size: 12px; color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── LANYARD / WIDE CARD ── */
+  .lanyard-row {
+    display: flex; gap: 8px;
+    overflow-x: auto; padding: 8px 0 24px;
+    scrollbar-width: none;
+    justify-content: flex-start;
+  }
+  .lanyard-row::-webkit-scrollbar { display: none; }
+  .lanyard {
+    flex: 0 0 auto;
+    width: 340px;
+    display: flex; background: var(--bg3);
+    border-radius: 4px; overflow: hidden;
+    transition: transform .3s;
+    cursor: pointer;
+  }
+  .lanyard:hover { transform: scale(1.05); }
+  .lanyard-rank {
+    width: 50px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 32px; font-weight: 900;
+    color: var(--muted); opacity: .3;
+  }
+  .lanyard-body { padding: 16px 16px 16px 0; }
+  .lanyard-body h3 { font-family: var(--serif); font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .lanyard-body p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  /* ── AUTHOR CARD ── */
+  .author-section {
+    padding: 60px 0;
+  }
+  .author-card {
+    background: linear-gradient(135deg, var(--bg2) 0%, rgba(239,35,60,.06) 100%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 56px 48px;
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .author-avatar {
+    width: 100%;
+    max-width: 480px;
+    display: flex; align-items: center; justify-content: center;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .author-info h3 {
+    font-family: var(--serif);
+    font-size: 32px; font-weight: 900; margin-bottom: 4px;
+  }
+  .author-info .title {
+    font-size: 16px; color: var(--red); font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .author-info p {
+    font-size: 16px; color: var(--muted);
+    line-height: 1.85; margin-bottom: 18px;
+  }
+  .author-stats {
+    display: flex; gap: 44px; margin-top: 28px;
+  }
+  .author-stats div .num { font-size: 32px; font-weight: 900; color: var(--text); line-height: 1; }
+  .author-stats div .lbl { font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: .04em; }
+  .size-detail {
+    margin-top: 16px; display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--muted); font-weight: 500;
+    letter-spacing: .02em;
+  }
+  .size-detail .sep { color: #555; }
+
+  /* ── TESTIMONIALS ── */
+  .testi-row {
+    display: flex; gap: 12px;
+    overflow-x: auto; padding: 8px 0 24px;
+    scrollbar-width: none;
+    justify-content: flex-start;
+  }
+  .testi-row::-webkit-scrollbar { display: none; }
+  .testi-card {
+    flex: 0 0 auto;
+    width: 340px;
+    background: var(--bg3);
+    border-radius: 4px;
+    padding: 28px;
+    border: 1px solid var(--border);
+  }
+  .testi-card .stars { color: var(--red); font-size: 13px; margin-bottom: 12px; letter-spacing: 2px; }
+  .testi-card blockquote {
+    font-size: 13px; color: var(--muted);
+    line-height: 1.75; font-style: italic;
+    margin-bottom: 16px;
+  }
+  .testi-author {
+    display: flex; align-items: center; gap: 10px;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .testi-avatar {
+    width: 32px; height: 32px;
+    background: var(--surface); color: var(--text);
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 2px;
+  }
+  .testi-name { font-size: 12px; font-weight: 700; }
+  .testi-detail { font-size: 10px; color: var(--muted); font-weight: 600; }
+
+  /* ── PRICING ── */
+  .pricing-section {
+    padding: 60px 0 80px;
+  }
+  .pricing-card {
+    max-width: 480px; margin: 0 auto;
+    background: linear-gradient(135deg, var(--bg3) 0%, rgba(239,35,60,.06) 100%);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 48px 44px;
+    text-align: center;
+  }
+  .pricing-card .plan {
+    font-size: 12px; font-weight: 700; letter-spacing: .15em;
+    color: var(--muted); text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .pricing-card .price {
+    font-family: var(--serif);
+    font-size: 80px; font-weight: 900; line-height: 1;
+    color: var(--text);
+  }
+  .pricing-card .price span { font-size: 28px; font-weight: 600; vertical-align: super; color: var(--muted); }
+  .pricing-card .price-sub {
+    font-size: 13px; color: var(--muted);
+    margin: 10px 0 32px;
+  }
+  .pricing-card ul {
+    list-style: none; text-align: left;
+    margin-bottom: 36px;
+  }
+  .pricing-card ul li {
+    font-size: 14px; color: var(--text);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .pricing-card ul li::before {
+    content: '>';
+    font-weight: 700; color: var(--red);
+  }
+  .pricing-btn {
+    display: block; width: 100%;
+    background: var(--red); color: #fff;
+    text-decoration: none; font-weight: 700; font-size: 18px;
+    padding: 16px; border-radius: 3px;
+    transition: background .2s;
+  }
+  .pricing-btn:hover { background: var(--red-d); }
+
+  /* ── FAQ ── */
+  .faq-section {
+    padding: 40px 0 60px;
+  }
+  .faq-section h2 {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    width: 100%; text-align: left; background: none;
+    border: none; padding: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; font-weight: 600;
+    color: var(--text); cursor: pointer;
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 16px;
+  }
+  .faq-q:hover { color: var(--red); }
+  .faq-icon {
+    color: var(--red); font-size: 22px; flex-shrink: 0;
+    transition: transform .2s;
+  }
+  .faq-a {
+    display: none; padding: 0 0 20px;
+    font-size: 14px; color: var(--muted);
+    line-height: 1.8;
+  }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 48px 36px;
+  }
+  .footer-social { display: flex; gap: 20px; margin-bottom: 24px; }
+  .footer-social a {
+    color: var(--muted); text-decoration: none;
+    font-size: 20px; transition: color .2s;
+  }
+  .footer-social a:hover { color: var(--text); }
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px; max-width: 700px;
+    margin-bottom: 28px;
+  }
+  .footer-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 13px; font-weight: 600;
+    transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+  footer .copy {
+    font-size: 11px; color: rgba(141,153,174,.35);
+  }
+
+  .row-section--tight { padding-top: 0; }
+
+  /* ── BOOK TILT ── */
+  .author-avatar .tilt {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    line-height: 0;
+    transition: transform .15s ease-out;
+    will-change: transform;
+  }
+
+  /* ── ENTRANCE ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.25,.46,.45,.94);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media(max-width: 1024px) {
+    .row-section { max-width: 100%; }
+    .author-section { max-width: 100%; }
+    .pricing-section { max-width: 100%; }
+  }
+  @media(max-width: 768px) {
+    nav { height: 68px; top: 36px; }
+    nav .offer-badge { font-size: 10px; gap: 4px; margin-left: 10px; }
+    nav .offer-badge #offer-timer { font-size: 12px; }
+    .billboard { padding: 0 20px 80px; min-height: 92vh; }
+    .billboard h1 { font-size: clamp(36px, 10vw, 52px); }
+    .btn-play, .btn-info { font-size: 15px; padding: 10px 22px; }
+    .offer-banner { font-size: 11px; padding: 8px 14px; }
+    .offer-banner #banner-timer { font-size: 12px; }
+    .row-section { padding: 24px 0; }
+    .row-scroll, .lanyard-row, .testi-row { justify-content: flex-start; }
+    .card { width: 200px; }
+    .card-img .num { font-size: 48px; }
+    .lanyard { width: 280px; }
+    .author-card { grid-template-columns: 1fr; padding: 32px; gap: 32px; text-align: center; }
+    .author-card .author-stats,
+    .author-card .size-detail { justify-content: center; }
+    .author-avatar { margin: 0 auto; width: 200px; height: auto; aspect-ratio: 2/3; }
+    .author-info h3 { font-size: 26px; }
+    .author-stats { justify-content: center; gap: 32px; }
+    .author-stats div .num { font-size: 26px; }
+    .pricing-section { padding: 32px 0 48px; }
+    .pricing-card { padding: 32px 20px; }
+    .pricing-card .price { font-size: 56px; }
+    .faq-section { padding: 24px 0 40px; }
+    footer { padding: 32px 20px; }
+    .footer-links { grid-template-columns: repeat(2, 1fr); }
+    .container { padding: 0 20px; }
+  }
+  @media(max-width: 480px) {
+    nav { height: 56px; padding: 0 14px; top: 30px; }
+    nav .logo { font-size: 18px; }
+    nav .offer-badge { display: none; }
+    nav .nav-cta { font-size: 11px; padding: 8px 16px; }
+    .offer-banner { font-size: 10px; padding: 6px 10px; }
+    .offer-banner #banner-timer { font-size: 11px; }
+    .billboard { padding: 0 16px 60px; min-height: 88vh; }
+    .billboard h1 { font-size: clamp(28px, 12vw, 40px); }
+    .billboard .sub { font-size: 14px; }
+    .btn-play, .btn-info { font-size: 13px; padding: 8px 16px; }
+    .btn-play .play-icon { border-width: 7px 0 7px 12px; }
+    .billboard-meta { font-size: 11px; gap: 10px; }
+    .row-header { flex-direction: column; gap: 6px; }
+    .row-header h2 { font-size: 18px; }
+    .card { width: 160px; }
+    .card-img .label { font-size: 8px; padding: 2px 6px; top: 8px; left: 8px; }
+    .card-body { padding: 12px; }
+    .card-body h3 { font-size: 12px; }
+    .card-body p { font-size: 11px; }
+    .lanyard { width: 240px; }
+    .lanyard-rank { width: 36px; font-size: 24px; }
+    .lanyard-body h3 { font-size: 12px; }
+    .lanyard-body p { font-size: 11px; }
+    .author-card { padding: 24px; gap: 24px; }
+    .author-avatar { width: 160px; height: auto; aspect-ratio: 2/3; }
+    .author-info h3 { font-size: 22px; }
+    .author-info p { font-size: 14px; }
+    .author-stats { gap: 24px; }
+    .author-stats div .num { font-size: 22px; }
+    .pricing-card { padding: 24px 16px; }
+    .pricing-card .price { font-size: 44px; }
+    .pricing-card .price span { font-size: 20px; }
+    .pricing-card ul li { font-size: 13px; padding: 8px 0; }
+    .pricing-btn { font-size: 15px; padding: 14px; }
+    .faq-section h2 { font-size: 18px; }
+    .faq-q { font-size: 14px; padding: 16px 0; }
+    .faq-a { font-size: 13px; }
+    .container { padding: 0 16px; }
+    footer { padding: 24px 14px; }
+    .footer-social a { font-size: 16px; }
+    .footer-links a { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- OFFER BANNER -->
+<div class="offer-banner">
+  <span class="pulse">⚠</span>
+  WARNING: Price increases to $47 when this timer expires. Secure your 15% discount now:
+  <span id="banner-timer">23:59:59</span>
+</div>
+
+<nav id="navbar">
+  <div class="container nav-inner">
+    <div class="nav-group">
+      <div class="logo">VIRAL<span>BLUEPRINT</span></div>
+    </div>
+    <a href="https://susi2023.gumroad.com/l/theviralblueprint" class="nav-cta">GET THE BOOK</a>
+  </div>
+</nav>
+
+<!-- BILLBOARD HERO -->
+<div class="billboard">
+  <div class="billboard-content">
+    <div class="billboard-tag">★★★★★ 4.8 — Featured in Hip-Hop Weekly</div>
+    <h1>It's Never Too Late<br>to Start on Your Dream</h1>
+    <p class="sub">Your Complete Guide to Starting a Rap Career, Building an Audience & Making Real Money in Music. 7 chapters. No fluff. Just the blueprint that works. Rick Ross didn't drop his first album until he was 30 — your time is right now.</p>
+    <div class="btns">
+      <a href="#pricing" class="btn-play">
+        <span class="play-icon"></span>
+        Buy Now — $39.99
+      </a>
+      <a href="#chapters" class="btn-info">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 7L15 11L10 15V7Z" fill="currentColor"/></svg>
+        See What's Inside
+      </a>
+    </div>
+    <div class="billboard-meta">
+      <span class="match">98% Match</span>
+      <span>2025</span>
+      <span class="badge">HD</span>
+      <span>7-Day Refund</span>
+      <span>Instant PDF</span>
+      <span>Rated 4.8 ★</span>
+    </div>
+  </div>
+</div>
+
+<!-- BOOK -->
+<div class="author-section">
+  <div class="container">
+  <div class="author-card">
+    <div>
+      <div class="author-avatar">
+        <div class="tilt"><img src="../assets/images/blueprint.png" alt="The Viral Blueprint" style="width:100%;height:auto;display:block;"></div>
+      </div>
+    </div>
+    <div class="author-info">
+      <h3>The Viral Blueprint</h3>
+      <div class="title">Your Complete Guide to Starting a Rap Career</div>
+      <p>7 chapters covering everything you need to go from zero to active artist. From mindset and finding your sound to building an audience, getting a record deal, and making real money. Each chapter is built on real stories, real strategies, and actionable steps you can take today.</p>
+      <p>Featuring the stories of Rick Ross, Kendrick Lamar, Drake, Cardi B, J. Cole, and more — plus the exact 90-day launch plan that has taken artists from nothing to releasing music on Spotify, building audiences, and generating income.</p>
+      <div class="author-stats">
+        <div><div class="num">7</div><div class="lbl">Chapters</div></div>
+        <div><div class="num">90</div><div class="lbl">Day Launch Plan</div></div>
+        <div><div class="num">9</div><div class="lbl">Income Streams</div></div>
+      </div>
+      <div class="size-detail">
+        <span>📄 PDF</span><span class="sep">·</span><span>47 Pages</span><span class="sep">·</span><span>2.4 MB</span><span class="sep">·</span><span>Instant Download</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- CHAPTERS -->
+<div class="row-section reveal" id="chapters">
+  <div class="container">
+  <div class="row-header">
+    <h2>7 Chapters — From Zero to Active Artist</h2>
+    <a href="#pricing" class="see-all">Get Full Access →</a>
+  </div>
+  <div class="row-scroll">
+    <div class="card">
+      <div class="card-img">
+        <span class="num">01</span>
+        <span class="label">CH 1</span>
+      </div>
+      <div class="card-body">
+        <h3>It's Never Too Late</h3>
+        <p>Why right now is the best time to start — backed by real stories of artists who launched late and built empires. Kill the lie that there's an expiration date on your dream.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <span class="num">02</span>
+        <span class="label">CH 2</span>
+      </div>
+      <div class="card-body">
+        <h3>Finding Your Sound</h3>
+        <p>Develop your style, voice, identity, and brand as an artist. The 4 pillars of your sound, how to find your niche, and the 10-song rule that accelerates your growth.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <span class="num">03</span>
+        <span class="label">CH 3</span>
+      </div>
+      <div class="card-body">
+        <h3>Building Your Audience</h3>
+        <p>Grow a real fanbase from zero without spending money on ads. Platform-by-platform strategy for TikTok, Instagram, YouTube, Spotify, and SoundCloud.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <span class="num">04</span>
+        <span class="label">CH 4</span>
+      </div>
+      <div class="card-body">
+        <h3>Getting a Record Deal</h3>
+        <p>How to get signed the right way and avoid getting scammed. Contract terms that trap artists, the modern path to signing, and when to stay independent.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <span class="num">05</span>
+        <span class="label">CH 5</span>
+      </div>
+      <div class="card-body">
+        <h3>Making Money as an Artist</h3>
+        <p>Every income stream working rappers use to build real wealth — streaming, shows, merch, brand deals, sync licensing, and teaching. Income potential at every level.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <span class="num">06</span>
+        <span class="label">CH 6</span>
+      </div>
+      <div class="card-body">
+        <h3>The Money Behind the Music</h3>
+        <p>9 ways to make serious money in rap without ever touching a mic — producer, manager, videographer, engineer, publicist, booking agent, and more. Income potential at a glance.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <span class="num">07</span>
+        <span class="label">CH 7</span>
+      </div>
+      <div class="card-body">
+        <h3>Your 90-Day Launch Plan</h3>
+        <p>A step-by-step action plan to go from zero to active artist. Days 1-30 build your foundation, Days 31-60 your first release, Days 61-90 build momentum.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<div class="row-section row-section--tight reveal">
+  <div class="container">
+  <div class="row-header">
+    <h2>What You'll Learn</h2>
+    <a href="#pricing" class="see-all">Get the Full Blueprint →</a>
+  </div>
+  <div class="row-scroll">
+    <div class="card">
+      <div class="card-img">
+        <div class="card-letter">A</div>
+      </div>
+      <div class="card-body">
+        <h3>Mindset Shift</h3>
+        <p>Why the music industry has never been more accessible and why your life experience is your greatest asset as an artist.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <div class="card-letter">B</div>
+      </div>
+      <div class="card-body">
+        <h3>Artist Identity</h3>
+        <p>Define your flow, voice tone, topics, and visual brand. Pick your lane and master it before expanding.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <div class="card-letter">C</div>
+      </div>
+      <div class="card-body">
+        <h3>Algorithm Strategy</h3>
+        <p>How TikTok, Instagram, YouTube, and Spotify discovery actually work. Post consistently and let the algorithms work for you.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <div class="card-letter">D</div>
+      </div>
+      <div class="card-body">
+        <h3>Deal or No Deal</h3>
+        <p>Know when to sign and when to stay independent. Understand 360 deals, recoupment, masters ownership, and scam detection.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <div class="card-letter">E</div>
+      </div>
+      <div class="card-body">
+        <h3>Income Streams</h3>
+        <p>8 revenue sources from streaming royalties to brand deals to teaching. How to monetize before you blow up.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <div class="card-letter">F</div>
+      </div>
+      <div class="card-body">
+        <h3>Behind-the-Scenes</h3>
+        <p>9 roles in rap that pay six figures without being the artist. Producer, manager, engineer, publicist, booking agent, and more.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TOP CHAPTERS -->
+<div class="row-section row-section--tight reveal">
+  <div class="container">
+  <div class="row-header">
+    <h2>Start With These First</h2>
+  </div>
+  <div class="lanyard-row">
+    <div class="lanyard">
+      <div class="lanyard-rank">1</div>
+      <div class="lanyard-body">
+        <h3>It's Never Too Late</h3>
+        <p>Rick Ross dropped his debut at 30. Kendrick was 25. Your age is not a disadvantage — your story is your advantage.</p>
+      </div>
+    </div>
+    <div class="lanyard">
+      <div class="lanyard-rank">2</div>
+      <div class="lanyard-body">
+        <h3>Finding Your Sound</h3>
+        <p>Record 10 songs before you judge yourself. Your first songs aren't for the world — they're for finding your voice.</p>
+      </div>
+    </div>
+    <div class="lanyard">
+      <div class="lanyard-rank">3</div>
+      <div class="lanyard-body">
+        <h3>Building Your Audience</h3>
+        <p>Post 1-2 times daily on TikTok. Consistency beats talent every time in the social media era.</p>
+      </div>
+    </div>
+    <div class="lanyard">
+      <div class="lanyard-rank">4</div>
+      <div class="lanyard-body">
+        <h3>Getting a Record Deal</h3>
+        <p>Labels sign proof, not potential. Build numbers first — 50K monthly listeners before you approach anyone.</p>
+      </div>
+    </div>
+    <div class="lanyard">
+      <div class="lanyard-rank">5</div>
+      <div class="lanyard-body">
+        <h3>Making Money</h3>
+        <p>Don't wait until you're famous to monetize. Sell merch today with print-on-demand. Perform at local open mics for cash.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="row-section reveal">
+  <div class="container">
+  <div class="row-header">
+    <h2>What Readers Are Saying</h2>
+  </div>
+  <div class="testi-row">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>I was 28 and convinced I'd missed my window. This blueprint showed me Rick Ross started at 30. I dropped my first song at 29. Now I'm at 12K monthly listeners and booking shows.</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">MJ</div>
+        <div><div class="testi-name">Marcus J.</div><div class="testi-detail">Rapper · Atlanta</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>Chapter 4 alone saved me from signing a deal that would've trapped me for 5 albums. I took the blueprint to a music attorney and he said 'whoever wrote this saved you hundreds of thousands.'</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">DR</div>
+        <div><div class="testi-name">Dreya R.</div><div class="testi-detail">Independent Artist · Houston</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>I was just a producer trying to sell beats. Chapter 6 showed me 9 ways to make money in music without being on the mic. Now I manage 3 artists and produce full-time.</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">TL</div>
+        <div><div class="testi-name">T-Lew</div><div class="testi-detail">Producer · Chicago</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>The 90-day launch plan is worth the price alone. I went from having nothing recorded to releasing my first single on Spotify in 60 days. The step-by-step format left no room for excuses.</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">KE</div>
+        <div><div class="testi-name">Kaye E.</div><div class="testi-detail">Rapper · Brooklyn</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PRICING -->
+<div class="pricing-section reveal" id="pricing">
+  <div class="container container--xs">
+  <div class="pricing-card">
+    <div class="plan">The Viral Blueprint · Complete Edition</div>
+    <div class="price"><span>$</span>39.99</div>
+    <div class="price-sub">One-time payment · Lifetime updates · Instant PDF</div>
+    <ul>
+      <li>Complete 7-Chapter Framework</li>
+      <li>Finding Your Sound Workbook</li>
+      <li>Platform-by-Platform Strategy Guide</li>
+      <li>Record Deal Contract Cheat Sheet</li>
+      <li>8 Income Streams Breakdown</li>
+      <li>90-Day Launch Plan Calendar</li>
+    </ul>
+    <a href="https://susi2023.gumroad.com/l/theviralblueprint" class="pricing-btn">Download The Viral Blueprint →</a>
+    <div class="payment-methods">Card · PayPal · Apple Pay · Google Pay</div>
+  </div>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section reveal">
+  <div class="container container--sm">
+  <h2>Common Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Is this a physical book or a PDF?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Digital PDF delivered instantly to your inbox after purchase. Read on any device.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How is this different from other rap guides?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Most guides give you theory. This blueprint gives you a step-by-step operating system — from finding your sound to getting a deal to making money. No fluff. Just mechanics that work.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">I'm not a founder. Will this help me?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Absolutely. Whether you're an artist, producer, engineer, manager, or just getting started — the blueprint works for anyone serious about building in music.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How fast will I get it?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Instantly. The download link arrives in your email within seconds of purchase.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What if it doesn't work for me?<span class="faq-icon">+</span></button>
+      <div class="faq-a">7-day refund.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="reveal">
+  <div class="container">
+  <div class="footer-social">
+    <a href="#" aria-label="X">𝕏</a>
+    <a href="#" aria-label="Instagram">◻</a>
+    <a href="#" aria-label="YouTube">▶</a>
+    <a href="#" aria-label="LinkedIn">◈</a>
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Contact</a>
+    <a href="#">FAQ</a>
+  </div>
+  <div class="copy">© 2026 The Viral Blueprint. All rights reserved.</div>
+</div>
+</footer>
+
+<script>
+  // NAV SCROLL
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // COUNTDOWN TIMER
+  function updateOfferTimer() {
+    const now = new Date();
+    const end = new Date(now);
+    end.setHours(23, 59, 59, 0);
+    if (now > end) end.setDate(end.getDate() + 1);
+    const diff = end - now;
+    const h = String(Math.floor(diff / 3600000)).padStart(2,'0');
+    const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+    const s = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+    const t = `${h}:${m}:${s}`;
+    const bt = document.getElementById('banner-timer');
+    if (bt) bt.textContent = t;
+  }
+  setInterval(updateOfferTimer, 1000);
+  updateOfferTimer();
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // DRAG SCROLL
+  document.querySelectorAll('.row-scroll, .lanyard-row, .testi-row').forEach(el => {
+    let isDown = false, startX, scrollLeft;
+    el.addEventListener('mousedown', e => {
+      isDown = true; startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft;
+      el.style.cursor = 'grabbing'; el.style.userSelect = 'none';
+    });
+    el.addEventListener('mouseleave', () => {
+      if (!isDown) return; isDown = false; el.style.cursor = ''; el.style.userSelect = '';
+    });
+    el.addEventListener('mouseup', () => {
+      isDown = false; el.style.cursor = ''; el.style.userSelect = '';
+    });
+    el.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      el.scrollLeft = scrollLeft - (x - startX);
+    });
+  });
+
+  // SCROLL REVEAL
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // 3D TILT
+  document.querySelectorAll('.author-avatar').forEach(el => {
+    const tilt = el.querySelector('.tilt');
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      const rx = (y - .5) * -8;
+      const ry = (x - .5) * 8;
+      tilt.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`;
+    });
+    el.addEventListener('mouseleave', () => {
+      tilt.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+    });
+  });
+</script>
+</body>
+</html>

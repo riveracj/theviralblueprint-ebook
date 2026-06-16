@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Old World Homestead</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: #0a0a08;
+    color: #f5f0e8;
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -.01em;
+  }
+  p {
+    color: #8a8278;
+    max-width: 500px;
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    max-width: 700px;
+  }
+  .card {
+    background: #181816;
+    border: 1px solid #2a2a27;
+    padding: 36px 32px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 340px;
+    text-decoration: none;
+    color: inherit;
+    transition: background .2s, transform .2s;
+    text-align: left;
+  }
+  .card:hover {
+    background: #222220;
+    transform: translateY(-4px);
+  }
+  .card .tag {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .card h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .card p {
+    font-size: 14px;
+    color: #6e6a66;
+    margin-bottom: 0;
+  }
+  .card .price {
+    font-size: 15px;
+    color: #c9a84c;
+    font-weight: 700;
+    margin-top: 16px;
+    display: block;
+    font-family: 'Courier New', monospace;
+  }
+  footer {
+    margin-top: 48px;
+    font-size: 12px;
+    color: #4a4840;
+  }
+</style>
+</head>
+<body>
+  <h1>Old World Homestead</h1>
+  <p>Practical knowledge for the modern homestead. No fluff. Just formulas that work.</p>
+  <div class="grid">
+    <a class="card" href="buried-home-manual/">
+      <span class="tag">Bestseller</span>
+      <h2>The Buried Home Manual</h2>
+      <p>22 suppressed formulas to eliminate pests, preserve wood, generate free energy, and purify water. No permits. Any home.</p>
+      <span class="price">$17 →</span>
+    </a>
+    <a class="card" href="viral-blueprint/">
+      <span class="tag">Digital Book</span>
+      <h2>The Viral Blueprint</h2>
+      <p>Your complete guide to starting a rap career, building an audience, and making real money in music. 7 chapters.</p>
+      <span class="price">$39.99 →</span>
+    </a>
+  </div>
+  <footer>&copy; 2026 Old World Homestead</footer>
+</body>
+</html>
